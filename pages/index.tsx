@@ -3,6 +3,8 @@ import Head from "next/head";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
+import Box from "@mui/material/Box";
+import Map from "../components/map/map";
 
 const Home: NextPage = () => {
   return (
@@ -13,13 +15,25 @@ const Home: NextPage = () => {
         <meta name="viewport" content="initial-scale=1, width=device-width" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <AppBar position="static">
-        <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Locamory
-          </Typography>
-        </Toolbar>
-      </AppBar>
+      <Box
+        sx={{
+          width: "100vw",
+          height: "100vh",
+          display: "flex",
+          flexDirection: "column",
+        }}
+      >
+        <AppBar position="static">
+          <Toolbar>
+            <Typography variant="h6" component="div">
+              Locamory
+            </Typography>
+          </Toolbar>
+        </AppBar>
+        <Box sx={{ flexGrow: 1 }}>
+          <Map />
+        </Box>
+      </Box>
     </>
   );
 };
